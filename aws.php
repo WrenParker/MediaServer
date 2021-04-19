@@ -7,8 +7,12 @@ use Aws\S3\S3Client;
 use Aws\Exception\AwsException;
 
 function connectS3(){
+  $data = file_get_contents("awskey.json");
+  $json = json_decode($data, true);
   $s3Client = S3Client::factory(array(
       'credentials' => array(
+        'key' => $json['key'],
+        'secret' => $json['secret']
       ),
       'region' => 'us-east-1',
       'version' => 'latest'
