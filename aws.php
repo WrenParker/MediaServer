@@ -37,7 +37,7 @@ function getURL($key) {
     'Bucket' => "wren-parker",
     'Key'    => $key
   ]);
-  $request = $s3Client->createPresignedRequest($cmd, '+1 minute');
+  $request = $s3Client->createPresignedRequest($cmd, '+15 seconds');
   $signedUrl = (string) $request->getUri();
 
   return $signedUrl;

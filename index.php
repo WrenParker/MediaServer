@@ -44,17 +44,16 @@
 
   <div class="container">
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      <label for="key">Key</label>
-      <input type="text" id="key" name="key"><br><br>
+      <label for="key">Search:</label>
+      <input type="text" id="search" name="search"><br><br>
       <input type="submit" name="findKey" value="Submit">
     </form>
     <?php
-    if(isset($_POST) && $_POST["key"]!=="") {
-      $url = getURL($_POST["key"]);
+    foreach ($all as $row) {
+      $url = getURL($row['key']);
       echo <<<IMAGE
-        <img src="{$url}" alt='not found'"/>
+        <img style="width: 200px;" src="{$url}" alt='not found'"/>
       IMAGE;
-
     }
     ?>
   </div>
