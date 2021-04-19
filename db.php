@@ -3,10 +3,13 @@
 require 'aws.php';
 
 function makeConnection() {
-  $servername = "localhost";
-  $username = "test";
-  $password = "test";
-  $db = "test";
+  $data = file_get_contents("auth.json");
+  $json = json_decode($data, true);
+
+  $servername = $json['dbServer'];
+  $username = $json['dbUser'];
+  $password = $json['dbPass'];
+  $db = $json['db'];
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $db);
