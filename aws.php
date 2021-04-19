@@ -9,8 +9,6 @@ use Aws\Exception\AwsException;
 function connectS3(){
   $s3Client = S3Client::factory(array(
       'credentials' => array(
-        'key'    => 'AKIAUSS2OBMN2P5YHXAR',
-        'secret' => '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',
       ),
       'region' => 'us-east-1',
       'version' => 'latest'
