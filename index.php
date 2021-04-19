@@ -49,6 +49,7 @@
       <input type="submit" name="findKey" value="Submit">
     </form>
     <?php
+    $all = getAll();
     foreach ($all as $row) {
       $url = getURL($row['key']);
       echo <<<IMAGE
