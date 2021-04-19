@@ -28,7 +28,7 @@ function insertIntoDatabase($name, $key, $access) {
 
   $conn = makeConnection();
   $query = <<<QUERY
-    INSERT INTO `files`(`name`, `key`, `access-level`) VALUES ("{$name}", "{$key}", {$access});
+    INSERT INTO `media`(`name`, `key`, `access-level`) VALUES ("{$name}", "{$key}", {$access});
   QUERY;
   $conn->prepare($query);
   $result = $conn->query($query);
@@ -40,7 +40,7 @@ function insertIntoDatabase($name, $key, $access) {
 
 function getAll() {
   $conn = makeConnection();
-  $query = "SELECT * FROM `files`";
+  $query = "SELECT * FROM `media`";
   $result = $conn->query($query);
 
   $conn->close();
