@@ -32,8 +32,6 @@ function insertIntoDatabase($name, $key, $access) {
   QUERY;
   $conn->prepare($query);
   $result = $conn->query($query);
-  if($conn)
-    echo "help";
   $conn->close();
 }
 
