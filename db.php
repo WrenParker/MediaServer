@@ -40,7 +40,7 @@ function getAll() {
   $conn = makeConnection();
   $query = "SELECT * FROM `media`";
   $result = $conn->query($query);
-
+  if($conn!= NULL) echo "huh";
   $conn->close();
   return $result;
 }
