@@ -30,7 +30,6 @@ if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload')
 
       if(move_uploaded_file($fileTmpPath, $dest_path))
       {
-        echo "test";
         $message ='File is successfully uploaded.';
         insertIntoS3($key, $dest_path);
         insertIntoDatabase((string)$fileName, (string)$key, (int)1);
