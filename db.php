@@ -16,6 +16,7 @@ function makeConnection() {
 
   // Check connection
   if ($conn->connect_error) {
+    return NULL;
     die("Connection failed: " . $conn->connect_error);
   }
 
