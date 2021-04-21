@@ -26,7 +26,7 @@
       if (mysqli_num_rows($all)==0) { echo "No content found!"; }
       else {
         while($row = $all->fetch_assoc()) {
-          echo $row['name'] . " " . $row['key'];
+          echo $row['name'] . " " . $row['link'];
           echo "<br/>";
         }
       }
@@ -51,7 +51,7 @@
     <?php
     $all = getAll();
     foreach ($all as $row) {
-      $url = getURL($row['key']);
+      $url = getURL($row['link']);
       echo <<<IMAGE
         <img style="width: 200px;" src="{$url}" alt='not found'"/>
       IMAGE;

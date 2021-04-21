@@ -27,7 +27,7 @@ function insertIntoS3($key, $url){
   $result = $s3Client->putObject([
         'Bucket' => 'wren-parker',
         'Key' => $key,
-        'SourceFile' => $url,
+        'SourceFile' => $url
   ]);
   return TRUE;
 }
